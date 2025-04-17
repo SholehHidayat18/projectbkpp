@@ -10,16 +10,17 @@
   width: 100%;
   top: 0;
   z-index: 1000;
-  background-image: linear-gradient(50deg, #5fbfeb 0, #53c8e8 51%, #5ce5f4);
+  background-image: linear-gradient(50deg, #800000 0%, #b22222 50%, #ffd700 100%);
+
 }
 
 .navbar-logo {
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: thin;
   cursor: pointer;
 }
 .navbar-logo:hover {
-  color: black;
+  color: gray;
 }
 
 .navbar-links {
@@ -35,8 +36,8 @@
 
 .navbar-links a:hover {
   /* text-decoration: underline; */
-  font-weight: bold;
-  color: black;
+  font-weight: thin;
+  color: gray;
 }
 
 .navbar-hamburger {

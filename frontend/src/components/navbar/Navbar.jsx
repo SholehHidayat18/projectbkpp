@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container">
       <div className="navbar-logo" onClick={(e) => handleNavigation(e, "hero")}>
-        Voyawander
+        Balai Diklat BKPP Kota Semarang
       </div>
       <div className={`navbar-links ${menuOpen ? "navbar-links-open" : ""}`}>
         <a href="#hero" onClick={(e) => handleNavigation(e, "hero")}>
