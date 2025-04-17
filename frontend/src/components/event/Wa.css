@@ -1,0 +1,93 @@
+#whatsapp-chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+}
+
+#wa-widget-send-button {
+  border-radius: 50%;
+  padding: none;
+  cursor: pointer;
+}
+
+.wa-chat-box {
+  width: 320px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+}
+
+.wa-chat-box-header {
+  display: flex;
+  align-items: center;
+  background-color: #075e54;
+  padding: 10px;
+  color: white;
+}
+
+.wa-chat-box-brand {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.wa-chat-box-brand-text {
+  flex: 1;
+}
+
+.wa-chat-bubble-close-btn {
+  cursor: right;
+}
+
+.wa-chat-box-content {
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.wa-chat-box-content-chat-brand {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.wa-chat-box-content-chat-welcome {
+  font-size: 14px;
+}
+
+.wa-chat-box-send {
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.wa-chat-box-content-send-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25d366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.wa-chat-box-content-send-btn:hover {
+  background-color: #1ebe5d;
+}
+
+.wa-chat-box-content-send-btn-icon {
+  margin-right: 8px;
+}
+
+.wa-chat-box-poweredby {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #888;
+}

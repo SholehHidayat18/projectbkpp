@@ -1,5 +1,5 @@
 import "./App.css";
-import Santa from "./components/event/Santa";
+import Wa from "./components/event/Wa";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import AllRoutes from "./routes/AllRoutes";
@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <Navbar />
       <AllRoutes />
-      <Santa />
+      <Wa />
       <Footer />
     </div>
   );
