@@ -43,20 +43,17 @@ const Navbar = () => {
           Home
         </a>
         <a href="#aboutus" onClick={(e) => handleNavigation(e, "aboutus")}>
-          About Us
-        </a>
-        <a href="#hotels" onClick={(e) => handleNavigation(e, "hotels")}>
-          Hotels
-        </a>
-        <a href="#flights" onClick={(e) => handleNavigation(e, "flights")}>
-          Flights
+          Tentang Kami
         </a>
         <a href="#holidays" onClick={(e) => handleNavigation(e, "holidays")}>
-          Holidays
+          Persewaan
         </a>
         <a href="#contactus" onClick={(e) => handleNavigation(e, "contactus")}>
-          Contact Us
+          Hubungi Kami
         </a>
+        <a href="login" onClick={(e) => handleNavigation(e, "login")}>
+          Login
+          </a>
       </div>
       <div className="navbar-hamburger" onClick={toggleMenu}>
         <span className="hamburger-bar"></span>

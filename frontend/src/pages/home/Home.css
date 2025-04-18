@@ -8,21 +8,17 @@
 
 /* Hero Section */
 .hero-section {
-  /* position: fixed;  */
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: url("../../assets/images/home/background.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* Ensures it stays behind other sections */
-  /* margin-top: 40px; */
+  z-index: 1;
+  /* Hapus background-image karena sudah pakai video */
+  background: none;
 }
+
 
 /* Other Sections */
 .aboutus-section,

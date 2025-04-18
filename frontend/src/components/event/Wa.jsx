@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Wa.css";
-import Logo from "../../assets/images/Logo Jateng.png"; 
+import Logo from "../../assets/images/LogoJateng.png"; 
 import Icon from "../../assets/images/Wa.png";
 import CloseIcon from "../../assets/images/x.png";
 

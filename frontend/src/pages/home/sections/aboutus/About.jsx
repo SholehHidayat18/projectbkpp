@@ -1,52 +1,42 @@
 import React from "react";
 import "./About.css";
-import { GiCommercialAirplane } from "react-icons/gi";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { CiPercent } from "react-icons/ci";
+import { FaHotel, FaUsers, FaTags } from "react-icons/fa";
 
 const About = () => {
   return (
     <section className="about-container">
       <div className="about-container-header">
-        <span>We offer the Best</span>
+        <span>Layanan Unggulan Balai Diklat Kota Semarang</span>
         <span>
-          Out team of travel experts is dedicated to ensuring that you have the
-          vacation of a lifetime. Choose us for your next adventure and see why
-          we are best in the business.
+          Balai Diklat Kota Semarang menyediakan berbagai fasilitas yang dapat disewa untuk keperluan pribadi maupun institusi, seperti gedung pertemuan, penginapan, ruang meeting, dan lapangan. Kami siap mendukung kelancaran acara Anda.
         </span>
       </div>
       <div className="about-container__parent">
         <div className="about-container__box">
           <div className="about-container__boxIcon">
-            <GiCommercialAirplane />
+            <FaHotel />
           </div>
-          <span className="about-container__boxTitle">International Tours</span>
+          <span className="about-container__boxTitle">Fasilitas Lengkap</span>
           <span className="about-container__boxText">
-            Explore the world like never before with out International tours.
-            Discover new cultures meet new people and create memories that will
-            last a lifetime.
+            Tersedia gedung pertemuan, penginapan yang nyaman, ruang meeting yang representatif, serta lapangan untuk berbagai aktivitas dan acara.
           </span>
         </div>
         <div className="about-container__box">
           <div className="about-container__boxIcon">
-            <BsFillPeopleFill />
+            <FaUsers />
           </div>
-          <span className="about-container__boxTitle">Travel Community</span>
+          <span className="about-container__boxTitle">Pelayanan Profesional</span>
           <span className="about-container__boxText">
-            Join our travel commnunity and connect with like minded travelers
-            from around the world, Share tips stories and advice on your next
-            advanture.
+            Dikelola oleh tim yang berpengalaman dari Balai Diklat Kota Semarang, kami memastikan setiap layanan berjalan dengan profesional dan sesuai kebutuhan Anda.
           </span>
         </div>
         <div className="about-container__box">
           <div className="about-container__boxIcon">
-            <CiPercent />
+            <FaTags />
           </div>
-          <span className="about-container__boxTitle">Great Offers</span>
+          <span className="about-container__boxTitle">Harga Terjangkau</span>
           <span className="about-container__boxText">
-            Dont miss out our exclusive discounts and deals on flights, hotel
-            and vacation packages. Save big and travel more with our special
-            offers.
+            Nikmati fasilitas terbaik dengan harga yang kompetitif, cocok untuk berbagai keperluan acara dan kegiatan Anda.
           </span>
         </div>
       </div>

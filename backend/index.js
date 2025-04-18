@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Configure CORS
 const corsOptions = {
-  origin: "https://dc-voyawander.vercel.app",
+  origin: "http://localhost:5173",
   optionsSuccessStatus: 200,
 };
 
