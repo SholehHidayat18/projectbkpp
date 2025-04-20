@@ -1,8 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import img1 from "../../../../assets/images/home/bg1.jpg";
-import img2 from "../../../../assets/images/home/bg2.jpg";
-import videoBg from "../../../../assets/images/home/videobackground.mp4";
+import videoBg from "../../../../assets/images/home/Video2.mp4";
 import { useNavigate } from "react-router";
 
 const Hero = () => {
@@ -28,31 +26,36 @@ const Hero = () => {
 
   return (
     <section className="hero-container">
-      {/* VIDEO BACKGROUND */}
-      <video autoPlay muted loop playsInline className="hero-video-background">
-        <source src={videoBg} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+  {/* VIDEO BACKGROUND */}
+  <div className="video-wrapper">
+    <video autoPlay muted loop playsInline className="hero-video-background">
+      <source src={videoBg} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div className="video-overlay"></div>
+  </div>
 
-      {/* Hero content */}
-      <div className="hero-left">
-        <img src={img1} alt="hero-img" className="hero-left-img" />
-        <img src={img2} alt="hero-img" className="hero-left-img" />
-      </div>
-      <div className="hero-right">
-        <span>Temukan Kemudahan dalam Menyewa Fasilitas</span>
-        <span>
-          Kami menyediakan layanan penyewaan gedung pertemuan, penginapan,
-          meeting room, dan lapangan untuk berbagai kebutuhan Anda. Praktis,
-          nyaman, dan terpercaya.
-        </span>
-        <button className="hero-button">
-          <a href="#about" onClick={(e) => handleNavigation(e, "aboutus")}>
-            Pelajari Lebih Lanjut
-          </a>
-        </button>
-      </div>
-    </section>
+  {/* Content */}
+  <div className="hero-text-area">
+    <h1 className="hero-title">
+      Temukan <span className="highlight">Kemudahan</span> dalam Menyewa Fasilitas
+    </h1>
+    <p className="hero-description">
+      Kami menyediakan layanan penyewaan <strong>gedung pertemuan</strong>, <strong>penginapan</strong>,
+      <strong> meeting room</strong>, dan <strong>lapangan</strong> untuk berbagai kebutuhan Anda.
+      <em> Praktis, nyaman, dan terpercaya.</em>
+    </p>
+  </div>
+
+  <div className="hero-button-area">
+    <button className="hero-button">
+      <a href="#about" onClick={(e) => handleNavigation(e, "aboutus")}>
+        Pelajari Lebih Lanjut
+      </a>
+    </button>
+  </div>
+</section>
+
   );
 };
 

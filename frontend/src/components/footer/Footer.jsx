@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaFax, FaInstagram, FaLinkedin, FaMailBulk, FaMailchimp, FaMapMarkerAlt, FaVoicemail, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -29,9 +29,9 @@ const Footer = () => {
           <p><strong>WA / SMS:</strong> +62 822-2300-0404</p>
 
           <div className="footer-social">
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaFacebook /></a>
+            <a href="https://www.instagram.com/bkppkotasemarang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
+            <a href="024-3584064"><FaFax/></a>
+            <a href="#"><FaWhatsapp/></a>
           </div>
         </div>
       </div>

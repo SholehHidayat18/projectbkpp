@@ -1,70 +1,53 @@
 .footer-section {
-  font-family: 'Arial', sans-serif;
+  background: #000;
   color: white;
-  background: #111;
+  padding: 2rem;
 }
 
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 40px 60px;
-  background-color: #111;
+  gap: 2rem;
 }
 
-.footer-location,
-.footer-about {
-  flex: 2 2 50%;
-  margin-bottom: 30px;
+/* LOCATION */
+.footer-location h2 {
+  margin-bottom: 1rem;
 }
 
-.footer-location h2,
-.footer-about h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  letter-spacing: 2px;
-}
-
-.footer-map-link {
-  display: inline-flex;
-  align-items: center;
-  color: #eee;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.map-icon {
-  margin-right: 8px;
-}
-
-.footer-map-container iframe {
+.footer-map-container {
+  margin-bottom: 2rem; /* ✅ jarak map dengan bawah jika ada */
   border-radius: 8px;
-  width: 100%;
+  overflow: hidden;
+}
+
+/* ABOUT US */
+.footer-about h2 {
+  margin-bottom: 1rem;
 }
 
 .footer-about p {
-  margin: 8px 0;
+  margin-bottom: 0.75rem; /* ✅ beri jarak antar teks */
+  line-height: 1.6;
 }
 
 .footer-social {
-  margin-top: 20px;
+  margin-top: 1rem; /* ✅ jarak antara teks terakhir dan icon sosial */
 }
 
 .footer-social a {
-  margin-right: 15px;
-  font-size: 20px;
-  color: #eee;
-  transition: color 0.3s ease;
-}
-
-.footer-social a:hover {
-  color: #ffd700;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(to right, maroon, gold);
+  margin-right: 0.8rem;
   color: white;
-  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #555;
+  padding-top: 1rem;
+  opacity: 0.8;
 }
