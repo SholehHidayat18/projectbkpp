@@ -29,8 +29,9 @@ const AllRoutes = () => {
       )}
       {user?.transactionId && <Route path="/checkout" element={<Checkout />} />}
       <Route path="/success" element={<Success />} />
-      {user?.location && <Route path="/register" element={<Register />} />}
-      {user?.location && <Route path="/login" element={<Login />} />}
+      
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "./Login.css";
 import InputBox from "../../components/inputbox/InputBox";
-import logo from "../../assets/images/logo.webp";
+import logo from "../../assets/images/Logo1.jpg";
 import Restriction from "../../utils/Restriction";
 import { useLoading } from "../../context/LoadingContext";
 import { useNavigate } from "react-router";
@@ -184,7 +184,7 @@ const Login = () => {
     <div className="login-container">
       <div className="login-formParent">
         <img src={logo} alt="logo" className="login-companyLogo" />
-        <p className="login-companySlogan">Welcome back! Login to continue.</p>
+        <p className="login-companySlogan"> Please, Login to continue.</p>
         <form className="login-form" onSubmit={handleLogin}>
           <InputBox
             type={"email"}

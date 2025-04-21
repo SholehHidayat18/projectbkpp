@@ -1,23 +1,21 @@
+// Contact.js
 import React, { useState } from "react";
 import axios from "axios";
 import "./Contact.css";
-
 import { useLoading } from "../../../../context/LoadingContext";
-import { MdEmail } from "react-icons/md";
-import { SiGooglemessages } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
-import { API_URL } from "../../../../constant";
 import { useToast } from "../../../../context/ToastContext";
+import  Video  from "../../../../assets/images/home/Video.mp4"
 
 const Contact = () => {
   const { startLoading, stopLoading } = useLoading();
+  const { showToast } = useToast();
   const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     mobile: "",
     message: "",
   });
-
-  const { showToast } = useToast();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,120 +23,109 @@ const Contact = () => {
 
   const validateForm = () => {
     const { email, mobile, message } = formData;
-    if (!email || !mobile || !message) {
-      return "All fields are required!";
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!email || !mobile || !message) return "All fields are required!";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return "Please enter a valid email address!";
-    }
-    if (!/^\d{10}$/.test(mobile)) {
+    if (!/^\d{10}$/.test(mobile))
       return "Mobile number must be exactly 10 digits!";
-    }
-    if (message.trim().length < 10 && message.trim().length > 500) {
-      return "Message must be at least 10 characters long!";
-    }
+    if (message.trim().length < 10 || message.trim().length > 500)
+      return "Message must be between 10 and 500 characters!";
     return null;
   };
 
   const handleSend = async (e) => {
     e.preventDefault();
     startLoading();
-    const validationError = validateForm();
-    if (validationError) {
-      showToast({ type: "error", message: validationError });
-
+    const error = validateForm();
+    if (error) {
+      showToast({ type: "error", message: error });
       stopLoading();
       return;
     }
 
     try {
-      const response = await axios.post(`${API_URL}/messages/`, formData);
-
+      const response = await axios.post("/api/contact", formData);
       if (response.status === 200 || response.data.status === "success") {
         showToast({ type: "success", message: "Message sent successfully!" });
-
-        setFormData({ email: "", mobile: "", message: "" });
+        setFormData({ firstName: "", lastName: "", email: "", mobile: "", message: "" });
       } else {
-        showToast({
-          type: "error",
-          message: response.data.message || "Failed to send the message",
-        });
+        showToast({ type: "error", message: response.data.message || "Failed to send message" });
       }
-    } catch (error) {
-      showToast({
-        type: "error",
-        message: error.response?.data?.message || "An error occurred",
-      });
+    } catch (err) {
+      showToast({ type: "error", message: err.response?.data?.message || "An error occurred" });
     } finally {
       stopLoading();
     }
   };
 
   return (
-    <section className="contact-container">
-      <div className="contact-banner"></div>
-      <div className="contact-container-header">
-        <span>Get in touch</span>
-        <span>
-          Don't wait, reach out to us now and let us help you plan your next
-          vacation. Our dedicated team is always here to answer your questions
-          and make your travel dreams a reality.
-        </span>
-      </div>
-      <form className="contact-form" onSubmit={handleSend}>
-        <div className="contact-form__flex">
-          <div className="contact-form__inputFlex">
-            <MdEmail />
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="contact-form__input"
-            />
-          </div>
-          <div className="contact-form__inputFlex">
-            <FaPhoneAlt />
-
-            <input
-              type="number"
-              id="mobile"
-              name="mobile"
-              placeholder="Mobile number"
-              value={formData.mobile}
-              onChange={handleInputChange}
-              required
-              className="contact-form__input"
-              onInput={(e) => {
-                // Restricting to 10 digits
-                if (e.target.value.length > 10) {
-                  e.target.value = e.target.value.slice(0, 10);
-                }
-              }}
-            />
+    <div className="contact-wrapper">
+      <div className="contact-left">
+      <video className="contact-video" autoPlay loop muted playsInline>
+        <source src={Video} type="video/mp4" />
+          Your browser does not support the video tag.
+      </video>
+        <div className="contact-left-overlay">
+          <h2>BALAI DIKLAT</h2>
+          <p>
+            Tanpa harus pusing cari-cari tempat terpisah,
+            Tanpa harus khawatir soal kenyamanan dan fasilitas.
+            Sebab kami tahu, kamu ingin fokus pada yang terpenting:
+            Kesuksesan acaramu.
+          </p>
+          <div className="social-icons">
+            <i className="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-facebook"></i>
           </div>
         </div>
-        <div className="contact-form__inputFlex">
-          <SiGooglemessages />
+      </div>
+      <div className="contact-right">
+        <h2>Hubungi Kami</h2>
+        <p>24/7 Kami akan menjawab pertanyaan dan masalah Anda</p>
+        <form className="contact-form" onSubmit={handleSend}>
+          <div className="row-input">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="Nama Depan"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Nama Belakang"
+              value={formData.lastName}
+              onChange={handleInputChange}
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+          <input
+            type="number"
+            name="mobile"
+            placeholder="No.HP"
+            value={formData.mobile}
+            onChange={handleInputChange}
+            onInput={(e) => {
+              if (e.target.value.length > 10) e.target.value = e.target.value.slice(0, 10);
+            }}
+          />
           <textarea
-            id="message"
             name="message"
-            placeholder="Message"
+            placeholder="Isi Keluhanmu"
             value={formData.message}
             onChange={handleInputChange}
-            required
-            className="contact-form__input"
-          ></textarea>{" "}
-        </div>
-        <button type="submit" className="contact-sendBtn">
-          Send
-        </button>
-      </form>
-    </section>
+          ></textarea>
+          <button type="submit" className="contact-sendBtn">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

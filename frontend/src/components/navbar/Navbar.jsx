@@ -1,10 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router"; // Import React Router hooks
 import "./Navbar.css";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Navbar = () => {
+  
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const { user } = useContext(UserContext);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar-container">
+    <nav className={`navbar-container ${isVisible ? "navbar-visible" : ""}`}>
       <div className="navbar-logo" onClick={(e) => handleNavigation(e, "hero")}>
         Balai Diklat BKPP Kota Semarang
       </div>
@@ -51,9 +69,10 @@ const Navbar = () => {
         <a href="#contactus" onClick={(e) => handleNavigation(e, "contactus")}>
           Hubungi Kami
         </a>
-        <a href="login" onClick={(e) => handleNavigation(e, "login")}>
-          Login
-          </a>
+        <a href="/login" onClick={(e) => { e.preventDefault(); navigate("/login"); setMenuOpen(false);}}>
+            Login
+        </a>
+
       </div>
       <div className="navbar-hamburger" onClick={toggleMenu}>
         <span className="hamburger-bar"></span>

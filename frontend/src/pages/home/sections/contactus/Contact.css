@@ -1,105 +1,141 @@
-.contact-container {
+/* Contact.css */
+.contact-wrapper {
+  display: flex;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: -150px;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
-.contact-banner {
-  width: 100vw;
-  height: 400px;
-  background-image: url("../../../../assets/images/home/mountain.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.6;
+.contact-left {
+  flex: 1;
+  background: url('../../../../assets/images/leaf.jpg') no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-container-header {
-  max-width: 868px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 30px;
+.contact-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
-  padding-bottom: 25px;
-  margin-top: -80px;
-}
-.contact-container-header > span:nth-child(1) {
-  font-weight: bold;
-  font-size: 40px;
-}
-.contact-container-header > span:nth-child(2) {
-  font-size: 16px;
 }
 
-.contact-sendBtn {
-  background-image: linear-gradient(90deg, #00adfd 0, #00c6fe 51%, #00e3fe);
-  border-radius: 40px;
-  color: #fff;
-  width: 150px;
-  padding: 14px 0px;
-  border: none;
-  font-weight: bold;
-  margin-top: 30px;
-  font-size: 18px;
+.contact-left-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: "Open Sans", sans-serif;
 }
-.contact-sendBtn:hover {
+
+.contact-left-overlay h2 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-left-overlay p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons i {
+  font-size: 18px;
   cursor: pointer;
-  padding: 13px 0px;
-  border: 1px solid royalblue;
+}
+
+.contact-right {
+  flex: 1.2;
+  padding: 60px 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-right h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.contact-right p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: center;
+  gap: 15px;
 }
 
-.contact-form__input {
-  padding: 10px 10px;
-  width: 100%;
-  border: none;
-  font-size: 18px;
-}
-
-.contact-form__inputFlex {
+.row-input {
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid grey;
-  width: 100%;
-}
-.contact-form__input:focus {
-  border-style: none;
-  outline: none;
-}
-.contact-form__inputFlex > textarea {
-  width: 100% !important;
+  gap: 10px;
 }
 
-@media only screen and (max-width: 425px) {
-  .contact-form__flex {
-    display: flex;
+.row-input input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.contact-sendBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contact-sendBtn:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
     flex-direction: column;
-    gap: 10px;
-    width: 90vw;
   }
-}
-@media only screen and (max-width: 768px) {
-  .contact-form__flex {
-    display: flex;
-    gap: 10px;
-    width: 90vw;
+
+  .contact-left,
+  .contact-right {
+    flex: none;
+    width: 100%;
+    height: auto;
   }
-}
-@media only screen and (min-width: 769px) {
-  .contact-form__flex {
-    display: flex;
-    gap: 10px;
-    width: 90vw;
-    max-width: 900px;
+
+  .contact-right {
+    padding: 30px 20px;
   }
 }

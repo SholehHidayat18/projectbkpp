@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import { FaFacebook, FaFax, FaInstagram, FaLinkedin, FaMailBulk, FaMailchimp, FaMapMarkerAlt, FaVoicemail, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaYoutube, } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -30,8 +31,8 @@ const Footer = () => {
 
           <div className="footer-social">
             <a href="https://www.instagram.com/bkppkotasemarang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><FaInstagram /></a>
-            <a href="024-3584064"><FaFax/></a>
-            <a href="#"><FaWhatsapp/></a>
+            <a href="https://x.com/bkppkotasmg"><FaX/></a>
+            <a href="https://www.youtube.com/channel/UCNyinCD3l223jWnHOW9S4CQ"><FaYoutube/></a>
           </div>
         </div>
       </div>
