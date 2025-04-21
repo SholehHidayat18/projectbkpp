@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 app.use(redisMiddleware);
 
 app.get("/", (req, res) => {
-  return res.json({ message: "Welcome to the world of Voyawander backend!" });
+  return res.json({ message: "Welcome to the world of diklat backend!" });
 });
 
 app.use("/api/v1/users", userRouter);
