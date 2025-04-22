@@ -94,7 +94,7 @@ const resendOTP = async (req, res) => {
     const otp = await generateOTP(email);
 
     const to = email;
-    const subject = "Voyawander email verification code";
+    const subject = "Diklat email verification code";
     const text = `Your OTP is ${otp}`;
 
     const emailStatus = await sendEmail(to, subject, text);
@@ -178,7 +178,7 @@ const updatePassword = async (req, res) => {
     const userId = req.user.userId; // userId is now in req.user from the authenticate middleware
 
     // Fetch user by ID
-    const user = await User.findById(userId);
+    const user = await User.findById(userId);P
     if (!user) {
       return ApiResponse.error(res, [], 404, "User not found");
     }
@@ -287,7 +287,7 @@ const verifyEmail = async (req, res) => {
     const otp = await generateOTP(email);
 
     const to = email;
-    const subject = "Voyawander email verification code";
+    const subject = "Diklat email verification code";
     const text = `Your OTP is ${otp}`;
 
     await sendEmail(to, subject, text);

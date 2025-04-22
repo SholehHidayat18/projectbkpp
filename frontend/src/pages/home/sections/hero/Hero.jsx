@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import videoBg from "../../../../assets/images/home/Video2.mp4";
+import videoBg from "../../../../assets/images/home/Bg.mp4";
 import { useNavigate } from "react-router";
 
 const Hero = () => {

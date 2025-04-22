@@ -48,9 +48,7 @@ const WaWidget = () => {
               role="button"
               target="_blank"
               rel="noopener noreferrer"
-              href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-                message
-              )}`}
+              href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`}
               title="WhatsApp"
               className="wa-chat-box-content-send-btn"
             >
